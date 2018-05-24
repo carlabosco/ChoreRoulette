@@ -16,40 +16,48 @@ namespace ChoreRoulette
         {
             InitializeComponent();
 
-            string answer = tbAnswer.Text;
+            string answer = tb_Answer.Text;
             string[] answerArray = answer.Split(' ');
             int numberOfPeople = answerArray.Length;
 
-            answerArray.
 
-            foreach (string name in answerArray)
-            {
 
-            }
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void checkedListBox1_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void tbAnswer_TextChanged(object sender, EventArgs e)
-        {
-           
         }
 
         private void okButton_Click(object sender, EventArgs e)
         {
-            string[] choresChecked = new string[] { };
-            checkedListBox1.Items.AddRange(choresChecked);
+            string people = tb_Answer.Text;
+            string[] peopleArray = people.Split(' ');
+            foreach (string name in peopleArray)
+            {
+                Random rnd = new Random();
+                string chore = peopleArray[rnd.Next(peopleArray.Length)];
+            }
+
+            foreach (string chore in checkedListBox1.CheckedItems)
+            {
+                tb_Result.Text += " " + chore;
+            }
+
         }
 
-        private void resultBox_TextChanged(object sender, EventArgs e)
+        private void tb_Question(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void tb_Result_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tb_Answer_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CheckedListBox1(object sender, EventArgs e)
         {
            
         }

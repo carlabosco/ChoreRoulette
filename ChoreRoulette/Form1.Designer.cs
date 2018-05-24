@@ -29,11 +29,10 @@
         private void InitializeComponent()
         {
             this.tbQuestion = new System.Windows.Forms.TextBox();
-            this.tbAnswer = new System.Windows.Forms.TextBox();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.okButton = new System.Windows.Forms.Button();
-            this.resultBox = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tb_Result = new System.Windows.Forms.TextBox();
+            this.tb_Answer = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // tbQuestion
@@ -44,15 +43,7 @@
             this.tbQuestion.Size = new System.Drawing.Size(542, 30);
             this.tbQuestion.TabIndex = 0;
             this.tbQuestion.Text = "Who will be sharing the chores?";
-            this.tbQuestion.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // tbAnswer
-            // 
-            this.tbAnswer.Location = new System.Drawing.Point(12, 74);
-            this.tbAnswer.Name = "tbAnswer";
-            this.tbAnswer.Size = new System.Drawing.Size(739, 22);
-            this.tbAnswer.TabIndex = 1;
-            this.tbAnswer.TextChanged += new System.EventHandler(this.tbAnswer_TextChanged);
+            this.tbQuestion.TextChanged += new System.EventHandler(this.tb_Question);
             // 
             // checkedListBox1
             // 
@@ -74,7 +65,7 @@
             this.checkedListBox1.Name = "checkedListBox1";
             this.checkedListBox1.Size = new System.Drawing.Size(224, 208);
             this.checkedListBox1.TabIndex = 3;
-            this.checkedListBox1.SelectedIndexChanged += new System.EventHandler(this.checkedListBox1_SelectedIndexChanged_1);
+            this.checkedListBox1.SelectedIndexChanged += new System.EventHandler(this.CheckedListBox1);
             // 
             // okButton
             // 
@@ -86,21 +77,23 @@
             this.okButton.UseVisualStyleBackColor = true;
             this.okButton.Click += new System.EventHandler(this.okButton_Click);
             // 
-            // resultBox
+            // tb_Result
             // 
-            this.resultBox.Location = new System.Drawing.Point(342, 185);
-            this.resultBox.Multiline = true;
-            this.resultBox.Name = "resultBox";
-            this.resultBox.Size = new System.Drawing.Size(224, 208);
-            this.resultBox.TabIndex = 5;
-            this.resultBox.TextChanged += new System.EventHandler(this.resultBox_TextChanged);
+            this.tb_Result.Location = new System.Drawing.Point(395, 185);
+            this.tb_Result.Multiline = true;
+            this.tb_Result.Name = "tb_Result";
+            this.tb_Result.ReadOnly = true;
+            this.tb_Result.Size = new System.Drawing.Size(266, 208);
+            this.tb_Result.TabIndex = 5;
+            this.tb_Result.TextChanged += new System.EventHandler(this.tb_Result_TextChanged);
             // 
-            // textBox1
+            // tb_Answer
             // 
-            this.textBox1.Location = new System.Drawing.Point(0, 0);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 6;
+            this.tb_Answer.Location = new System.Drawing.Point(13, 91);
+            this.tb_Answer.Name = "tb_Answer";
+            this.tb_Answer.Size = new System.Drawing.Size(541, 22);
+            this.tb_Answer.TabIndex = 6;
+            this.tb_Answer.TextChanged += new System.EventHandler(this.tb_Answer_TextChanged);
             // 
             // Form1
             // 
@@ -108,11 +101,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(800, 503);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.resultBox);
+            this.Controls.Add(this.tb_Answer);
+            this.Controls.Add(this.tb_Result);
             this.Controls.Add(this.okButton);
             this.Controls.Add(this.checkedListBox1);
-            this.Controls.Add(this.tbAnswer);
             this.Controls.Add(this.tbQuestion);
             this.Name = "Form1";
             this.Text = " ";
@@ -125,11 +117,10 @@
         #endregion
 
         private System.Windows.Forms.TextBox tbQuestion;
-        private System.Windows.Forms.TextBox tbAnswer;
         private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Windows.Forms.Button okButton;
-        private System.Windows.Forms.TextBox resultBox;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tb_Result;
+        private System.Windows.Forms.TextBox tb_Answer;
     }
 }
 
