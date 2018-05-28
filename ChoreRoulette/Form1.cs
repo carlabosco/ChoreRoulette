@@ -35,17 +35,19 @@ namespace ChoreRoulette
             string[] peopleArray = people.Split(' ');
             int p = 0;
             string person = peopleArray[p];
-            //string rndChore;
             string[] selectedChores = checkedListBox1.CheckedItems.OfType<string>().ToArray();
             int choresPerPerson = selectedChores.Length / peopleArray.Length;
             int remainder = selectedChores.Length % peopleArray.Length;
-            //Random rnd = new Random();
+
+            //To shuffle selectedChores array:
+            Random rnd = new Random();
+            string[] randomChoresArray = selectedChores.OrderBy(x => rnd.Next()).ToArray();
 
 
 
-            for (int i = 0; i < selectedChores.Length; i++)
+            for (int i = 0; i < randomChoresArray.Length; i++)
             {
-                tb_Result.Text += peopleArray[p] + ": " + selectedChores[i] + " \r\n";
+                tb_Result.Text += peopleArray[p] + ": " + randomChoresArray[i] + " \r\n";
                 p++;
 
                 //If current p index gets to the end of the array, return to the beginning of the array:
@@ -54,8 +56,9 @@ namespace ChoreRoulette
                     p = 0;
                 }
             }
-            
-           
+
+            //Disable button after first click:
+            (sender as Button).Enabled = false;
         }
 
         private void tb_Question(object sender, EventArgs e)

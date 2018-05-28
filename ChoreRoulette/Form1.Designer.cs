@@ -37,10 +37,14 @@
             // 
             // tbQuestion
             // 
+            this.tbQuestion.BackColor = System.Drawing.SystemColors.Menu;
+            this.tbQuestion.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbQuestion.Location = new System.Drawing.Point(12, 38);
+            this.tbQuestion.Multiline = true;
             this.tbQuestion.Name = "tbQuestion";
-            this.tbQuestion.Size = new System.Drawing.Size(542, 30);
+            this.tbQuestion.ReadOnly = true;
+            this.tbQuestion.Size = new System.Drawing.Size(542, 32);
             this.tbQuestion.TabIndex = 0;
             this.tbQuestion.Text = "Who will be sharing the chores?";
             this.tbQuestion.TextChanged += new System.EventHandler(this.tb_Question);
@@ -58,9 +62,10 @@
             "Prepare lunchboxes",
             "Shop for groceries",
             "Take away the trash",
-            "Ubload dishwasher",
+            "Unload dishwasher",
             "Vacuum",
-            "Walk the dog"});
+            "Walk the dog",
+            "Mow the lawn"});
             this.checkedListBox1.Location = new System.Drawing.Point(12, 185);
             this.checkedListBox1.Name = "checkedListBox1";
             this.checkedListBox1.Size = new System.Drawing.Size(224, 208);
@@ -69,7 +74,7 @@
             // 
             // okButton
             // 
-            this.okButton.Location = new System.Drawing.Point(12, 399);
+            this.okButton.Location = new System.Drawing.Point(12, 419);
             this.okButton.Name = "okButton";
             this.okButton.Size = new System.Drawing.Size(75, 23);
             this.okButton.TabIndex = 4;
@@ -79,6 +84,7 @@
             // 
             // tb_Result
             // 
+            this.tb_Result.BackColor = System.Drawing.SystemColors.Control;
             this.tb_Result.Location = new System.Drawing.Point(395, 185);
             this.tb_Result.Multiline = true;
             this.tb_Result.Name = "tb_Result";
@@ -90,8 +96,9 @@
             // tb_Answer
             // 
             this.tb_Answer.Location = new System.Drawing.Point(13, 91);
+            this.tb_Answer.Multiline = true;
             this.tb_Answer.Name = "tb_Answer";
-            this.tb_Answer.Size = new System.Drawing.Size(541, 22);
+            this.tb_Answer.Size = new System.Drawing.Size(648, 57);
             this.tb_Answer.TabIndex = 6;
             this.tb_Answer.TextChanged += new System.EventHandler(this.tb_Answer_TextChanged);
             // 
@@ -107,7 +114,8 @@
             this.Controls.Add(this.checkedListBox1);
             this.Controls.Add(this.tbQuestion);
             this.Name = "Form1";
-            this.Text = " ";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = " Chore Roulette";
             this.TopMost = true;
             this.ResumeLayout(false);
             this.PerformLayout();
