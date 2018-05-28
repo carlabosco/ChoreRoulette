@@ -45,7 +45,7 @@ namespace ChoreRoulette
 
             for (int i = 0; i < selectedChores.Length; i++)
             {
-                tb_Result.Text += peopleArray[p] + ": " + selectedChores[i] + " \t";
+                tb_Result.Text += peopleArray[p] + ": " + selectedChores[i] + " \r\n";
                 p++;
 
                 //If current p index gets to the end of the array, return to the beginning of the array:
