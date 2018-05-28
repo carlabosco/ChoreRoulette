@@ -8,6 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+//Loop through people array,
+//Assign n chores to one person
+//Remove assigned chores from chores array
+//Repeat until all chores assigned
+
 namespace ChoreRoulette
 {
     public partial class Form1 : Form
@@ -28,17 +33,29 @@ namespace ChoreRoulette
         {
             string people = tb_Answer.Text;
             string[] peopleArray = people.Split(' ');
-            foreach (string name in peopleArray)
-            {
-                Random rnd = new Random();
-                string chore = peopleArray[rnd.Next(peopleArray.Length)];
-            }
+            int p = 0;
+            string person = peopleArray[p];
+            //string rndChore;
+            string[] selectedChores = checkedListBox1.CheckedItems.OfType<string>().ToArray();
+            int choresPerPerson = selectedChores.Length / peopleArray.Length;
+            int remainder = selectedChores.Length % peopleArray.Length;
+            //Random rnd = new Random();
 
-            foreach (string chore in checkedListBox1.CheckedItems)
-            {
-                tb_Result.Text += " " + chore;
-            }
 
+
+            for (int i = 0; i < selectedChores.Length; i++)
+            {
+                tb_Result.Text += peopleArray[p] + ": " + selectedChores[i] + " \t";
+                p++;
+
+                //If current p index gets to the end of the array, return to the beginning of the array:
+                if (p >= peopleArray.Length)
+                {
+                    p = 0;
+                }
+            }
+            
+           
         }
 
         private void tb_Question(object sender, EventArgs e)
